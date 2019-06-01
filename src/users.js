@@ -8,18 +8,16 @@ import {
   List,
   ReferenceInput,
   Responsive,
-  SelectInput,
   SimpleForm,
   SimpleList,
   TextField,
   TextInput,
-  UrlField,
 } from 'react-admin';
 
 const UserFilter = props => (
   <Filter {...props}>
-    <ReferenceInput label="Name" source="id" reference="User" allowEmpty>
-      <TextInput optionText="name" />
+    <ReferenceInput label="Search" source="name_contains" reference="User" allowEmpty alwaysOn>
+      <TextInput label="Search" resettable />
     </ReferenceInput>
   </Filter>
 );
@@ -30,8 +28,8 @@ export const UserList = props => (
       small={
         <SimpleList
           primaryText={record => record.name}
-          secondaryText={record => record.company}
-          tertiaryText={record => record.phone}
+          secondaryText={record => record.title}
+          tertiaryText={record => record.email}
           linkType="show"
         />
       }
@@ -40,8 +38,8 @@ export const UserList = props => (
           <TextField source="name" />
           <EmailField source="email" />
           <TextField source="phone" />
-          <TextField source="company" />
-          <UrlField source="website" />
+          <TextField source="title" />
+          <TextField source="department" />
         </Datagrid>
       }
     />
@@ -51,11 +49,11 @@ export const UserList = props => (
 export const UserEdit = props => (
   <Edit {...props}>
     <SimpleForm>
-      <TextInput source="name" />
-      <TextInput source="email" />
-      <TextInput source="phone" />
-      <TextInput source="company" />
-      <TextInput source="website" />
+      <TextField source="name" />
+      <EmailField source="email" />
+      <TextField source="phone" />
+      <TextField source="title" />
+      <TextField source="department" />
     </SimpleForm>
   </Edit>
 );
