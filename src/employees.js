@@ -14,16 +14,16 @@ import {
   TextInput,
 } from 'react-admin';
 
-const UserFilter = props => (
+const EmployeeFilter = props => (
   <Filter {...props}>
-    <ReferenceInput label="Search" source="name_contains" reference="User" allowEmpty alwaysOn>
+    <ReferenceInput label="Search" source="name_contains" reference="Employee" allowEmpty alwaysOn>
       <TextInput label="Search" resettable />
     </ReferenceInput>
   </Filter>
 );
 
-export const UserList = props => (
-  <List filters={<UserFilter />} {...props}>
+export const EmployeeList = props => (
+  <List filters={<EmployeeFilter />} {...props}>
     <Responsive
       small={
         <SimpleList
@@ -46,7 +46,7 @@ export const UserList = props => (
   </List>
 );
 
-export const UserEdit = props => (
+export const EmployeeEdit = props => (
   <Edit {...props}>
     <SimpleForm>
       <TextField source="name" />
@@ -58,7 +58,7 @@ export const UserEdit = props => (
   </Edit>
 );
 
-export const UserCreate = props => (
+export const EmployeeCreate = props => (
   <Create {...props}>
     <SimpleForm>
       <TextInput source="name" />

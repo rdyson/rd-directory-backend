@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { Admin, Resource } from 'react-admin';
 import buildGraphCoolProvider from 'ra-data-graphcool';
 import UserIcon from '@material-ui/icons/Group';
-import { UserList, UserCreate, UserEdit } from './users';
-
-// const client = new ApolloClient();
+import { EmployeeList, EmployeeCreate, EmployeeEdit } from './employees';
 
 class App extends Component {
   constructor() {
@@ -27,7 +25,7 @@ class App extends Component {
 
     return (
       <Admin dataProvider={dataProvider}>
-        <Resource name="User" list={UserList} edit={UserEdit} create={UserCreate} icon={UserIcon} />
+        <Resource name="Employee" list={EmployeeList} edit={EmployeeEdit} create={EmployeeCreate} icon={UserIcon} />
       </Admin>
     );
   }
