@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+a {
+  color: #2196F3;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+/* Quick styling to hide sidebar, select boxes, and add padding to main table */
+
+span[class*="MuiCheckbox-root-"] {
+  display: none;
+}
+
+div[class*="WithTheme-WithWidth-Sidebar"] {
+  display: none;
+}
+
+div[class*="Layout-content"] {
+  padding-left: 24px;
+}
