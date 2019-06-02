@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Admin, Resource } from 'react-admin';
 import buildGraphCoolProvider from 'ra-data-graphcool';
 import UserIcon from '@material-ui/icons/Group';
-import { EmployeeList, EmployeeCreate, EmployeeEdit } from './employees';
+import authProvider from './authProvider';
+import { EmployeeList, EmployeeCreate, EmployeeEdit, EmployeeView } from './employees';
 
 class App extends Component {
   constructor() {
@@ -24,8 +25,16 @@ class App extends Component {
     }
 
     return (
-      <Admin dataProvider={dataProvider}>
-        <Resource name="Employee" list={EmployeeList} edit={EmployeeEdit} create={EmployeeCreate} icon={UserIcon} />
+      <Admin authProvider={authProvider} dataProvider={dataProvider}>
+        {() => [
+          <Resource
+            name="Employee"
+            list={EmployeeList}
+            edit={localStorage.getItem('username') ? EmployeeEdit : EmployeeView}
+            create={localStorage.getItem('username') ? EmployeeCreate : null}
+            icon={UserIcon}
+          />,
+        ]}
       </Admin>
     );
   }

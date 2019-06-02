@@ -2,17 +2,22 @@ import React from 'react';
 import {
   Create,
   Datagrid,
+  DatagridBody,
   Edit,
   EmailField,
   Filter,
   List,
   ReferenceInput,
   Responsive,
+  Show,
   SimpleForm,
   SimpleList,
+  SimpleShowLayout,
   TextField,
   TextInput,
 } from 'react-admin';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
 
 const EmployeeTitle = ({ record }) => <span>{record ? `${record.name}` : ''}</span>;
 const EmployeePhoto = ({ record, size }) => (
@@ -53,6 +58,19 @@ export const EmployeeList = props => (
       }
     />
   </List>
+);
+
+export const EmployeeView = props => (
+  <Show actions={null} title={<EmployeeTitle />} {...props}>
+    <SimpleShowLayout>
+      <EmployeePhoto size="200" />
+      <TextField source="name" />
+      <EmailField source="email" />
+      <TextField source="phone" />
+      <TextField source="title" />
+      <TextField source="department" />
+    </SimpleShowLayout>
+  </Show>
 );
 
 export const EmployeeEdit = props => (
