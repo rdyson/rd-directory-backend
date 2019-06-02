@@ -19,16 +19,18 @@ a {
 }
 
 
-/* Quick styling to hide sidebar, select boxes, and add padding to main table */
-
+/* Hide select boxes, not wired up in data provider */
 span[class*="MuiCheckbox-root-"] {
   display: none;
 }
 
+/* Hide sidebar and menu button */
 div[class*="WithTheme-WithWidth-Sidebar"] {
   display: none;
 }
-
 div[class*="Layout-content"] {
   padding-left: 24px;
+}
+button[class*="WithTheme-WithWidth-AppBar---menuButton"] {
+  display: none;
 }

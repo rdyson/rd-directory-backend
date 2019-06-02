@@ -14,20 +14,11 @@ const customTheme = createMuiTheme({
       main: '#FFF',
     },
     secondary: {
-      main: '#312981',
+      main: '#392C9C',
     },
   },
   typography: {
     fontFamily: ['Avenir', 'Arial', 'sans-serif'].join(','),
-  },
-  overrides: {
-    MuiButton: {
-      // override the styles of all instances of this component
-      root: {
-        // Name of the rule
-        color: 'white', // Some CSS
-      },
-    },
   },
 });
 
