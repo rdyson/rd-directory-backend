@@ -1,8 +1,0 @@
-{
-  "name": "rd-directory-backend",
-  "version": 1,
-  "alias": "postlight.rocks",
-  "env": {
-    "REACT_APP_GRAPHCOOL_URI": "@react-app-datacool-uri"
-  }
-}

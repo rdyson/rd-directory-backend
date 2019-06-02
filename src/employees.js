@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Create,
   Datagrid,
-  DatagridBody,
   Edit,
   EmailField,
   Filter,
@@ -16,8 +15,6 @@ import {
   TextField,
   TextInput,
 } from 'react-admin';
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
 
 const EmployeeTitle = ({ record }) => <span>{record ? `${record.name}` : ''}</span>;
 const EmployeePhoto = ({ record, size }) => (
