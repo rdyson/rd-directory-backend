@@ -14,6 +14,14 @@ import {
   TextInput,
 } from 'react-admin';
 
+const EmployeeTitle = ({ record }) => <span>{record ? `${record.name}` : ''}</span>;
+const EmployeePhoto = ({ record, size }) => (
+  <img
+    src={record ? `https://api.adorable.io/avatars/${size}/${record.id}` : ''}
+    alt={record ? `${record.name}'s Profile Photo` : ''}
+  />
+);
+
 const EmployeeFilter = props => (
   <Filter {...props}>
     <ReferenceInput label="Search" source="name_contains" reference="Employee" allowEmpty alwaysOn>
@@ -35,6 +43,7 @@ export const EmployeeList = props => (
       }
       medium={
         <Datagrid rowClick="edit">
+          <EmployeePhoto size="50" />
           <TextField source="name" />
           <EmailField source="email" />
           <TextField source="phone" />
@@ -47,13 +56,14 @@ export const EmployeeList = props => (
 );
 
 export const EmployeeEdit = props => (
-  <Edit {...props}>
+  <Edit title={<EmployeeTitle />} {...props}>
     <SimpleForm>
-      <TextField source="name" />
-      <EmailField source="email" />
-      <TextField source="phone" />
-      <TextField source="title" />
-      <TextField source="department" />
+      <EmployeePhoto size="200" />
+      <TextInput source="name" />
+      <TextInput source="email" />
+      <TextInput source="phone" />
+      <TextInput source="title" />
+      <TextInput source="department" />
     </SimpleForm>
   </Edit>
 );
@@ -64,8 +74,8 @@ export const EmployeeCreate = props => (
       <TextInput source="name" />
       <TextInput source="email" />
       <TextInput source="phone" />
-      <TextInput source="company" />
-      <TextInput source="website" />
+      <TextInput source="title" />
+      <TextInput source="department" />
     </SimpleForm>
   </Create>
 );
