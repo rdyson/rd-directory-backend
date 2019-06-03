@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Responsive } from 'react-admin';
+import { AppBar, Logout } from 'react-admin';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Logo from './Logo';
@@ -13,24 +13,32 @@ const styles = {
     marginTop: '6px',
     fontFamily: 'Avenir',
   },
-  spacer: {
-    flex: 1,
-  },
   logo: {
     width: '130px',
     padding: '13px 26px',
   },
+  login: {
+    color: 'white',
+    textDecoration: 'none',
+    fontFamily: 'Avenir',
+    fontWeight: '200',
+    marginTop: '6px',
+  },
 };
 
-const CustomAppBar = withStyles(styles)(({ classes, logout }) => (
+const CustomAppBar = withStyles(styles)(({ classes }) => (
   <AppBar>
     <Logo />
     <Typography variant="title" color="inherit" className={classes.title}>
       Employee Directory
     </Typography>
     <span className={classes.spacer} />
-    {localStorage.getItem('username') && <Responsive small={logout} medium={logout} />}
-    {!localStorage.getItem('username') && <a href="/#/Login">Login</a>}
+    {localStorage.getItem('username') && <Logout />}
+    {!localStorage.getItem('username') && (
+      <a className={classes.login} href="/#/Login">
+        Login
+      </a>
+    )}
   </AppBar>
 ));
 

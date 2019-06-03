@@ -6,6 +6,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import CustomLayout from './CustomLayout';
 import authProvider from './authProvider';
 import { EmployeeList, EmployeeCreate, EmployeeEdit, EmployeeView } from './employees';
+import CustomLoginPage from './CustomLoginPage';
 
 const customTheme = createMuiTheme({
   palette: {
@@ -42,7 +43,13 @@ class App extends Component {
     }
 
     return (
-      <Admin authProvider={authProvider} dataProvider={dataProvider} theme={customTheme} appLayout={CustomLayout}>
+      <Admin
+        authProvider={authProvider}
+        dataProvider={dataProvider}
+        theme={customTheme}
+        appLayout={CustomLayout}
+        loginPage={CustomLoginPage}
+      >
         {() => [
           <Resource
             name="Employee"

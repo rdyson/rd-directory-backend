@@ -1,15 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 a {
@@ -31,6 +23,15 @@ div[class*="WithTheme-WithWidth-Sidebar"] {
 div[class*="Layout-content"] {
   padding-left: 24px;
 }
+span[class*="Logout-iconMenuPaddingStyle"] {
+  display: none;
+}
 button[class*="WithTheme-WithWidth-AppBar---menuButton"] {
   display: none;
+}
+button[class*="MuiIconButton-root"] {
+  display: none;
+}
+li[class*="Logout-menuItem"] {
+  margin-top: 6px;
 }

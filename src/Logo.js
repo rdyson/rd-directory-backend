@@ -9,7 +9,7 @@ const styles = {
 };
 
 const Logo = withStyles(styles)(({ classes }) => (
-  <a href="/">
+  <a href="/#/Employee">
     <img src="/logo.png" alt="Postlight Logo" className={classes.logo} />
   </a>
 ));

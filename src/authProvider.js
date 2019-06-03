@@ -1,4 +1,5 @@
-import { AUTH_LOGIN, AUTH_LOGOUT, AUTH_ERROR, AUTH_CHECK } from 'react-admin';
+import React from 'react';
+import { AUTH_LOGIN, AUTH_LOGOUT, AUTH_ERROR } from 'react-admin';
 
 export default (type, params) => {
   if (type === AUTH_LOGIN) {
@@ -9,7 +10,7 @@ export default (type, params) => {
   }
   if (type === AUTH_LOGOUT) {
     localStorage.removeItem('username');
-    return Promise.resolve();
+    return Promise.resolve({ redirectTo: '/' });
   }
   if (type === AUTH_ERROR) {
     const { status } = params;
@@ -19,8 +20,5 @@ export default (type, params) => {
     }
     return Promise.resolve();
   }
-  // if (type === AUTH_CHECK) {
-  //   return localStorage.getItem('username') ? Promise.resolve() : Promise.reject();
-  // }
   return Promise.resolve('Unknown Error');
 };
