@@ -6,7 +6,6 @@ const styles = {
   link: {
     fontFamily: 'Avenir',
     textAlign: 'center',
-    margin: '20px',
   },
 };
 

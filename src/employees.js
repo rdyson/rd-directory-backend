@@ -33,7 +33,7 @@ const EmployeeFilter = props => (
 );
 
 export const EmployeeList = props => (
-  <List filters={<EmployeeFilter />} {...props}>
+  <List filters={<EmployeeFilter />} bulkActionButtons={false} {...props}>
     <Responsive
       small={
         <SimpleList

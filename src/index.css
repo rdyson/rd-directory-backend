@@ -9,29 +9,3 @@ a {
   font-size: 1rem;
   font-weight: 500;
 }
-
-
-/* Hide select boxes, not wired up in data provider */
-span[class*="MuiCheckbox-root-"] {
-  display: none;
-}
-
-/* Hide sidebar and menu button */
-div[class*="WithTheme-WithWidth-Sidebar"] {
-  display: none;
-}
-div[class*="Layout-content"] {
-  padding-left: 24px;
-}
-span[class*="Logout-iconMenuPaddingStyle"] {
-  display: none;
-}
-button[class*="WithTheme-WithWidth-AppBar---menuButton"] {
-  display: none;
-}
-button[class*="MuiIconButton-root"] {
-  display: none;
-}
-li[class*="Logout-menuItem"] {
-  margin-top: 6px;
-}

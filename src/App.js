@@ -49,6 +49,7 @@ class App extends Component {
         theme={customTheme}
         appLayout={CustomLayout}
         loginPage={CustomLoginPage}
+        sidebar={null}
       >
         {() => [
           <Resource
